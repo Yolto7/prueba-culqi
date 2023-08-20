@@ -1,0 +1,65 @@
+{
+  "name": "sls-token",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "deploy": "sls deploy",
+    "dev": "sls offline start  --noPrependStageInUrl",
+    "test": "jest",
+    "format": "prettier --write \"src/**/*.ts\" \"tests/**/*.ts\"",
+    "format:check": "npm run format -- --check",
+    "format:fix": "npm run format -- --write",
+    "lint": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix",
+    "compliance": "npm run format:check && npm run lint && npm run test",
+    "prepare": "husky install"
+  },
+  "author": "Joaquin",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/aws-lambda": "^8.10.81",
+    "@types/jest": "^27.5.2",
+    "@types/node": "^16.18.41",
+    "@typescript-eslint/eslint-plugin": "^5.0.0",
+    "@typescript-eslint/parser": "^5.0.0",
+    "eslint": "^8.0.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "husky": "^8.0.3",
+    "jest": "^27.5.1",
+    "prettier": "^2.8.8",
+    "serverless-dotenv-plugin": "^6.0.0",
+    "serverless-offline": "^12.0.4",
+    "serverless-plugin-typescript": "^2.1.2",
+    "ts-jest": "^27.1.5",
+    "ts-node": "^10.7.0",
+    "typescript": "^4.9.5"
+  },
+  "dependencies": {
+    "@middy/core": "^2.5.7",
+    "@middy/http-json-body-parser": "^2.5.7",
+    "awilix": "^7.0.3",
+    "aws-lambda": "^1.0.7",
+    "dotenv": "^16.3.1",
+    "pg-promise": "^11.5.3",
+    "randexp": "^0.5.3",
+    "redis": "^4.6.7",
+    "zod": "^3.22.1"
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "js",
+      "json",
+      "ts"
+    ],
+    "rootDir": "tests/unit",
+    "testRegex": ".*\\.spec\\.ts$",
+    "transform": {
+      "^.+\\.(t|j)s$": "ts-jest"
+    },
+    "collectCoverageFrom": [
+      "**/*.(t|j)s"
+    ],
+    "testEnvironment": "node"
+  }
+}

@@ -1,0 +1,40 @@
+# serverless.yml
+service: aws-lambda-card
+frameworkVersion: "3"
+useDotenv: true
+
+provider:
+  name: aws
+  versionFunctions: false
+  runtime: nodejs14.x
+  region: us-east-1
+  stage: dev
+  timeout: 20
+  environment:
+    NODE_ENV: ${env:NODE_ENV}
+    DB_USER: ${env:DB_USER}
+    DB_PASS: ${env:DB_PASS}
+    DB_HOST: ${env:DB_HOST}
+    DB_NAME: ${env:DB_NAME}
+    DB_PORT: ${env:DB_PORT}
+    REDISCLOUD_URL: ${env:REDISCLOUD_URL}
+    REDIS_PARTITION_KEY: ${env:REDIS_PARTITION_KEY}
+
+functions:
+  getByToken:
+    handler: src/functions/card.getByToken
+    events:
+      - http:
+          path: /cards
+          method: get
+
+  create:
+    handler: src/functions/card.create
+    events:
+      - http:
+          path: /cards
+          method: post
+
+plugins:
+  - serverless-plugin-typescript
+  - serverless-offline
