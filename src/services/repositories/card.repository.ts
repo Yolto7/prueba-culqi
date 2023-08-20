@@ -1,4 +1,4 @@
-import { connectBD, killDBPool } from '../../database';
+import { connectBD } from '../../database';
 import { ICard } from './domain/card.domain';
 import { AppError, ERRORS } from '../../common/error';
 

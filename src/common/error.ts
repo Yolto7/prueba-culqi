@@ -12,7 +12,7 @@ export function AppError(
   errorCode: string,
   message: string,
   payload: any = undefined,
-  statusCode: number = 400
+  statusCode = 400
 ) {
   return {
     statusCode,

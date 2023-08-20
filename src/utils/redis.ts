@@ -24,7 +24,7 @@ export default class RedisCacheService {
     }
   }
 
-  async set(key: string, value: ICard, ttl: number = 900) {
+  async set(key: string, value: ICard, ttl = 900) {
     try {
       await this.client.connect();
       const valueJson = JSON.stringify(value);
