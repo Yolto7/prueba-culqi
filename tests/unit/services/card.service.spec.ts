@@ -45,7 +45,7 @@ describe('Card Service', () => {
     expect(result).toBeDefined();
   });
 
-  it('Should return Card not found because the token expired', async () => {
+  it('Should return Card not found because the data expired', async () => {
     jest.spyOn(redisProviderService, 'get').mockImplementation(async () => null);
 
     const result: any = await cardService.getByToken('MH9mirQCBgD8kbYe');
@@ -53,7 +53,7 @@ describe('Card Service', () => {
 
     expect(result).toBeDefined();
     expect(result.body.errorCode).toBe('ERR_NOT_FOUND');
-    expect(result.body.message).toBe('Card not found because the token expired.');
+    expect(result.body.message).toBe('Card not found because the data expired.');
   });
 
   it('Should return Expiration year should cannot be less than the current year', async () => {
