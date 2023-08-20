@@ -18,7 +18,7 @@ export default class CardService {
     try {
       const cacheData = await this.redisProviderService.get('cards', token);
       if (!cacheData) {
-        return AppError(ERRORS.NOT_FOUND, 'Card not found because the token expired.');
+        return AppError(ERRORS.NOT_FOUND, 'Card not found because the data expired.');
       }
 
       const { cvv, ...data } = cacheData;
