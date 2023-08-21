@@ -32,7 +32,7 @@ REDIS_PARTITION_KEY=Testing.
 
 - step 3: Run the command 'npm run dev' to launch the application locally.
 - step 4: Run the 'npm run test' command to execute the application tests.
-- step 5: Run the 'npm run format:fix' command to fix prettier errors
+- step 5: Run the 'npm run format:fix' command to fix prettier errors.
 - step 6: Run the 'npm run lint' command to see which files have linter errors.
 
 Happy Code 🎸
