@@ -4,7 +4,7 @@ Serverless Framework with TypeScript with n layers architecture.
 
 ## Prerequisites
 
-Remember to previously have installed nodejs, serverless, postgresql, pgAdmin and WSL for redis.
+Remember to previously have installed nodejs, serverless, postgresql, pgAdmin and redis.
 
 - [`serverless-framework`](https://github.com/serverless/serverless)
 - [`pgAdmin`](https://www.pgadmin.org/)
