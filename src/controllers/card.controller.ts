@@ -1,7 +1,7 @@
 import { APIGatewayProxyEvent, APIGatewayProxyResult } from 'aws-lambda';
 import CardService from '../services/card.service';
 
-import { validateCard, VALIDATE_MODES } from './validators/card';
+import { validateCard } from './validators/card';
 import { validateToken } from './validators/token';
 import { getToken } from '../utils/token';
 import { AppError, ERRORS } from '../common/error';
@@ -45,7 +45,7 @@ export default class CardController {
 
   public async create(event: APIGatewayProxyEvent): Promise<APIGatewayProxyResult> {
     try {
-      const response = validateCard(event.body, VALIDATE_MODES.STRICT);
+      const response = validateCard(event.body);
       if (!response.success) {
         return AppError(
           ERRORS.PAYLOAD_ERROR,

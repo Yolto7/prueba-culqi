@@ -1,10 +1,5 @@
 import { z } from 'zod';
 
-export const VALIDATE_MODES = {
-  STRICT: 'strict',
-  PARTIAL: 'partial',
-};
-
 const cardSchema = z.object({
   email: z
     .string()
@@ -17,14 +12,6 @@ const cardSchema = z.object({
   expiration_year: z.string().regex(/^\d{4}$/),
 });
 
-export function validateCard(payload: any, mode = VALIDATE_MODES.STRICT) {
-  let response;
-
-  if (mode === VALIDATE_MODES.PARTIAL) {
-    response = cardSchema.partial().safeParse(payload);
-  } else {
-    response = cardSchema.safeParse(payload);
-  }
-
-  return response;
+export function validateCard(payload: any) {
+  return cardSchema.safeParse(payload);
 }
