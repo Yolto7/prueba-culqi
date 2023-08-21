@@ -4,7 +4,8 @@ Serverless Framework with TypeScript with n layers architecture.
 
 ## Prerequisites
 
-Remember to previously have installed nodejs, serverless, postgresql, pgAdmin and redis.
+- step 1: Remember to previously have installed nodejs, serverless, postgresql, pgAdmin and redis.
+- step 2: Remember to run the sql script inside the database folder, so that it creates the database and its corresponding table.
 
 - [`serverless-framework`](https://github.com/serverless/serverless)
 - [`pgAdmin`](https://www.pgadmin.org/)
@@ -22,7 +23,7 @@ NODE_ENV=staging
 DB_USER='<your user>'
 DB_PASS='<your password>'
 DB_HOST=localhost
-DB_NAME='<your database name>'
+DB_NAME=example
 DB_PORT=5432
 
 REDISCLOUD_URL=redis://127.0.0.1:6379
